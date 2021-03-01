@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Promise封装AJAX</div>
+    <button id="btn">点击发送AJAX</button>
+
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", function(){
+            //promise封装AJAX
+            const p = new Promise((resolve,rejectes) =>{
+                // 1.创建对象
+                const xhr = new XMLHttpRequest();
+                // 2.初始化
+                xhr.open("GET","https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata");
+                // 3.发送
+                xhr.send();
+                //处理响应结果
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState === 4){
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            resolve(xhr.response)
+                        }else{
+                            rejectes(xhr.status)
+                        }
+                    }
+                }
+            })
+            p.then(value =>{
+                console.log(value);
+            },reason =>{
+                console.log(reason);
+            })
+        })
+    </script>
+</body>
+</html>

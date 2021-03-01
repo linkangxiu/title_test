@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包:函数中的函数, 函数外部变量不可以访问函数函数内部的变量, 函数内部变量可以访问函数外部的变量 
+        function dad(){
+            var num = 10;
+            return function(){
+                console.log(num);
+            }
+        }
+        let res = dad();
+        res();//10
+    </script>
+</body>
+</html>

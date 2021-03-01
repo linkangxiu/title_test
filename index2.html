@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            var numberArray = [3,6,2,4,1,5]; （考察基础 API）
+        */
+    //     var numberArray = [3,6,2,4,1,5];
+    //    //实现对该数组的倒排，输出[5,1,4,2,6,3]
+    //     console.log(numberArray.reverse());
+    //     // 实现对该数组的降序排列，输出[6,5,4,3,2,1];
+    //    let res = numberArray.sort((a,b)=>{
+    //         return b-a;
+    //     })
+    //     console.log(res);
+
+    /*
+        9、输出今天的日期，以 YYYY-MM-DD 的方式，比如今天是 2014 年 9 月
+        26 日，则输出 2014-09-26
+    */
+    // let date = new Date();
+    // let y = date.getFullYear();
+    // let m = date.getMonth()+1;
+    //     m = m < 10?"0"+m:m;
+    // let d = date.getDate();
+    // console.log(y,m,d);
+
+    /*
+        正则
+    */
+    // let str = "lin-kang-xiu";
+    // let res = str.replace(/\-/g,"&");
+    // console.log(res);
+
+    // let arr = [1,2,3,4];
+    // console.log(arr.splice(1,2));
+    // console.log(arr);
+    // var a=undefind; b=NaN
+    // console.log(a+b);
+    // for(i=0, j=0; i<10, j<6; i++, j++){
+    //     // debugger
+    //     k = i + j;
+    // }
+
+    // let a = 1;
+    // let b = a;//开辟新内存空间
+    //     a = 2;
+    //     console.log(a,b);
+    // let obj1 = {
+    //     name:"lin",
+    // }
+    // let obj2 = Object.assign({},obj1);
+    // obj2.name = "qiu";
+    // console.log(Object.assign(obj1,obj2));
+    // console.log(obj1,obj2);
+
+    // console.log(Object.assign([1, 2, 3], [4, 5]));
+
+    let obj1 = { name:"lin"};
+    let obj2 = Object.assign({},obj1,{ age:18});
+    console.log(obj2);
+    
+    </script>
+</body>
+</html>

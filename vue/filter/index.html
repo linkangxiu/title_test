@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{msg | message(10)}}
+    </div>
+    <script type="text/javascript">
+        // 全局过滤器
+        // Vue.filter("message",function(arg,num){
+        //     return arg/num
+        // })
+        const app = new Vue({
+            el:"#app",
+            data:{
+                msg:40,
+            },
+            // 局部过滤器
+            filters:{
+                message(arg,num){
+                    return arg/num
+                }
+            },
+        })
+    </script>
+</body>
+</html>
