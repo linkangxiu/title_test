@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-正则--限定符</title>
+</head>
+<body>
+    <script>
+        /**
+         * 贪婪性 按最多的来
+         *      *       字符串至少0 ~多个 组成 
+         *      +       字符串至少1 ~多个 组成
+         *      ?       字符串至少0 ~1 个 组成
+         *      {n}     只修饰字符串前面一个字符 字符串至少有n 个组成
+         *      {n,}    只修饰字符串前面一个字符 字符串有n ~多 个组成
+         *      {n,m}   只修饰字符串前面一个字符 字符串有n ~m 个组成
+         * 非贪婪性 按最少的来
+         *      *?       字符串须有0 ~多个 组成 
+         *      +?       字符串须有1 ~多个 组成
+         *      ??       字符串须有0 ~1 个 组成
+         *      {n}?     字符串须有n 个组成
+         *      {n,}?    字符串有n个组成
+         *      {n,m}?   字符串有n个组成
+        */
+
+
+        // *  字符串须有0 ~多个 组成
+        // let reg = /\d*/
+        // console.log(reg.test(""));//true
+        // console.log(reg.test("1"));//true
+        // console.log(reg.test("12"));//true
+        // console.log(reg.test("qwe"));//true
+        // let reg = /^\d*$/
+        // console.log(reg.test("1qwe2"));//false
+        // console.log(reg.test("12"));//true
+
+
+        // + 字符串须有1 ~多个 组成
+        // let reg = /^\d+$/
+        // console.log(reg.test(""));//false
+        // console.log(reg.test("1"));//true
+        // console.log(reg.test("12"));//true
+
+
+        // ? 字符串须有0 ~1 个 组成
+        // let reg = /^\d?$/
+        // console.log(reg.test(""));//true
+        // console.log(reg.test("1"));//true
+        // console.log(reg.test("12"));//false
+
+
+        // {n} 字符串须有n 个组成
+        // let reg = /^\d{3}$/
+        // console.log(reg.test(""));//false
+        // console.log(reg.test("1"));//false
+        // console.log(reg.test("123"));//true
+        // console.log(reg.test("1234"));//false
+        // console.log(reg.test("12345"));//false
+
+
+        // {n,} 字符串至少有n ~多 个组成
+        // let reg = /^\d{3,}$/
+        // console.log(reg.test(""));//false
+        // console.log(reg.test("1"));//false
+        // console.log(reg.test("123"));//true
+        // console.log(reg.test("1234"));//true
+        // console.log(reg.test("12345"));//true
+
+
+        // {n,m} 字符串至少有n ~m 个组成
+        let reg = /^\d{3,4}$/
+        console.log(reg.test(""));//false
+        console.log(reg.test("1"));//false
+        console.log(reg.test("123"));//true
+        console.log(reg.test("1234"));//true
+        console.log(reg.test("12345"));//false
+
+
+        // *?  字符串有0 个 组成
+        // let reg = /\d*?/
+        // console.log(reg.exec(""));//''
+        // console.log(reg.exec("1"));//''
+        // console.log(reg.exec("12"));//''
+
+
+        // +? 字符串有1个 组成
+        // let reg = /\d+?/
+        // console.log(reg.exec("1123456"));
+        // console.log(reg.exec("1212345"));
+
+
+        // ?? 字符串有0组成
+        // let reg = /\d??/
+        // console.log(reg.exec("1123456"));
+        // console.log(reg.exec("1212345"));
+
+
+        // {n}? 字符串有n 个组成
+        // let reg = /\d{3}?/
+        // console.log(reg.exec("1123456"));
+
+
+        // {n,}? 字符串有n 个组成
+        // let reg = /\d{3,}?/
+        // console.log(reg.exec("1123456"));
+
+
+        // {n,m}? 字符串n个组成
+        // let reg = /\d{3,4}?/
+        // console.log(reg.exec("1123456"));
+    </script>
+</body>
+</html>

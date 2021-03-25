@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元字符</title>
+</head>
+<body>
+    <script>
+        
+        // \s   一个空格 验证的字符串需要有空
+        // let reg = /\s/
+        // console.log(reg.test("qwert "));//true
+
+        // \S   非空 只要验证的字符有一个字符就行
+        // let reg = /\S/  
+        // console.log(reg.test("      s    "));//true
+
+        // \t   制表符(tab)
+        // let reg = /\t/
+        // console.log(reg.test('  '));//两个空格 false
+        // console.log(reg.test('  '));//一个tab true
+
+        // \d   数字
+        // let reg = /\d/
+        // console.log(reg.test("qwe1wer"));//true
+
+        // \D   非数字
+        // let reg = /\D/
+        // console.log(reg.test("123456"));//false
+        // console.log(reg.test("123456d12345"));//true
+
+        // \w   数字 字母 下划线
+        // let reg = /\w/
+        // console.log(reg.test("%%%%*****&&&&"));//false
+        // console.log(reg.test("%%2%%*****&2&&&"));// true
+
+
+        // \W  非数字 字母 下划线
+        // let reg = /\W/
+        // console.log(reg.test("qw123_____"));//false
+        // console.log(reg.test("qw123_____&&&&"));// true
+
+
+        // . 非换行内容 (\n => 换行符)
+        // let reg = /./
+        // console.log(reg.test("qw123_____"));//true
+        // console.log(reg.test("qw123\n_____&&&&"));// true
+        // console.log(reg.test("\n"));// false
+
+        // \ 转义符
+        // let reg = /\\/
+        let reg2 = /g/
+        // console.log(reg.test("12345"));//false
+        // console.log(reg.test("\\"));// true
+        // console.log(reg2.test("qwerty"));// false
+        // console.log(reg2.test("qwertgy"));// true
+        console.log(reg2.test("qwertgy"));// true
+    </script>
+</body>
+</html>

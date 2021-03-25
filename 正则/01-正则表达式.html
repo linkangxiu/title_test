@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式
+        
+        //字面量形式创建
+        // var reg = /abcd/
+        // console.log(reg);
+        // 内置构造函数创建
+        // var regG = new RegExp('abcd')
+        // console.log(regG,typeof regG);
+
+        /**
+         * 正则表达式的方法
+         *      正则.test(要验证的字符村片段)
+         *          返回值为true  or false
+         *      正则.exec(要验证的字符村片段)
+         *          返回一个数组 [0]就是要的片段 值返回寻找到的第一个片段
+        */
+        let reg = /abcd/
+        console.log(reg.test("asdabcdsdfg"));//true
+        console.log(reg.exec("asdfagabcdrtwertabcd"));
+    </script>
+</body>
+</html>

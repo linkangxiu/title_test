@@ -16,14 +16,31 @@
         // console.log(i);//5
 
 
-        for(var i=0;i<5;i++){
-            (function(j){
-                setTimeout(()=>{
-                    console.log(j++);
-                },3000)
-            })(i)
-        }
-        console.log(i);
+        // for(var i=0;i<5;i++){
+        //     (function(j){
+        //         setTimeout(()=>{
+        //             console.log(j++);//0,1,2,3,4
+        //         },3000)
+        //     })(i)
+        // }
+        // console.log(i);
+
+        　function f1(){
+    　　　　var n=999;
+    // 　　　  nAdd=function(){n+=1}
+    //         function nAdd(){
+    //             n += 1
+    //         }
+    　　　　function f2(){
+    　　　　　　alert(n);
+    　　　　}
+    　　　　return f2;
+
+    　　}
+    　　var result=f1();
+    　　result(); // 999
+    　　nAdd();
+    　　result(); // 1000
     </script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态class使用</title>
+    <style>
+        div{
+            color: aqua;
+        }
+           .name{
+               color: red;
+           } 
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 动态class对象写法 -->
+        <!-- <div @click="clickIndex(index)" :class="{name:index===currentIndex}" v-for="(item,index) in nameArr" :key="index">
+            {{item.name}}
+        </div> -->
+        <!-- 动态class数组写法 -->
+        <div @click="clickIndex(index)" :class="[{name:index===currentIndex}]" v-for="(item,index) in nameArr" :key="index">
+            {{item.name}}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                nameArr:[
+                    {name:"lin"},
+                    {name:"li"},
+                    {name:"yang"}
+                ],
+                currentIndex:0
+            },
+            mounted() {
+                
+            },
+            methods: {
+                clickIndex(index){
+                    console.log(index);
+                    this.currentIndex = index;
+                }
+            },
+        })
+    </script>
+</body>
+</html>

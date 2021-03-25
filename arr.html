@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2,3,4,5,6];
+        let arr2 = [
+            {
+                num:2
+            },
+            {
+                num:3,
+            }
+        ];
+        let arr3 = [];
+       arr1.forEach(item => {
+            if(arr2.some(value => value.num == item )){
+               const res =  arr2.filter(value => value.num == item )
+               arr3.push(...res)
+            }
+        })
+        console.log(arr3);
+    </script>
+</body>
+</html>

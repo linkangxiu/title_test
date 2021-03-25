@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nextTick使用</title>
+</head>
+<body>
+    <div id="app">
+        <div id="div" v-if="showText">这就是nextTick使用</div>
+        <button @click="show">按钮</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                showText:false
+            },
+            methods: {
+                show() {
+                    this.showText = true
+                    // this.showText = !this.showText
+                    // this.$nextTick(function () {
+                    //     document.getElementById("div").style.backgroundColor="red"
+                    // });
+                    setTimeout(()=>{
+                        document.getElementById("div").style.backgroundColor="red"
+                    },1000)
+                },
+            },
+        })
+        // nextTick 就是为了
+    </script>
+</body>
+</html>

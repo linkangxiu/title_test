@@ -5,17 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./recursive.js"></script>
 </head>
 <body>
     <script>
         //递归:就是函数自己调用自己,是循环运算的一种方式
-        function recursive(n){
-            if(n === 0)return 1;
-            return n*recursive(n-1);
+        // function recursive(n){
+        //     if(n === 0)return 1;
+        //     return n*recursive(n-1);
             
+        // }
+        // let res = recursive(4);
+        // console.log(res);
+        // console.log(arr);
+
+        function treeData(list,rootValue){
+            var arr = [];
+            // debugger
+            list && list.forEach(item => {
+                if(item.pid == rootValue){
+                    arr.push(item)
+                   const children = treeData(list,item.id);
+                   if(children.length){
+                       item.child = children
+                   }
+                }
+            });
+            return arr
         }
-        let res = recursive(4);
-        console.log(res);
+        let res = treeData(arrList,'')
+        console.log(res,"-----------");
+        console.log('0' == "");
+
     </script>
 </body>
 </html>

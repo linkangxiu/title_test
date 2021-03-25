@@ -22,5 +22,21 @@
     <div class="img">
         <img src="./img/01.png" alt="">
     </div>
+
+    <script>
+        let arr1 = [{name:"lin"},{name:"qiu"},{name:"li"}];
+        let arr = [1,3,4,5,6,7,8];
+
+        let res = arr.map(i=>{return i })//map方法不会改变原数组 返回一个新数组
+
+        let res1 = arr.filter(i=>{return i>2});//filter方法不会改变原数组 返回一个新数组
+
+        let newArr = [];
+
+        arr1.forEach(v=>{return newArr.push(v.name)})
+        console.log(newArr);
+        
+    </script>
+
 </body>
 </html>

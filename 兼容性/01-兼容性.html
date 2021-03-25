@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兼容性</title>
+    <style>
+        .shou{
+            /* 禁止文本复制选中 */
+            -webkit-user-select: none;
+            float: left;
+            margin-right: 20px;
+            /* margin-top: 30px; */
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .er{
+            /* width: 100px; */
+            /* height: 100px; */
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="shou">123456</div>
+    <div class="er">09876</div>
+    <script>
+        
+        function bijiao(){
+            let res = 6 > 4;
+            return res
+        }
+        console.log(bijiao());
+    </script>
+</body>
+</html>

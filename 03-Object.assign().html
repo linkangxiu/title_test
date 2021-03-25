@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-Object.assign()</title>
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script>
+        let obj1 = {name:"lin"}
+        let obj2 = {age:18};
+        console.log(Object.assign({},obj1,obj2));//推荐方式
+        console.log(Object.assign(obj1,obj2));
+        let arr1 = [1,2,3];
+        let arr2 = [5,6]
+        console.log(Object.assign([],arr1));
+        console.log(typeof Object.assign(arr1,arr2),Object.assign(arr1,arr2));//(3) [5, 6, 3]  把数组当做对象来处理
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script>
+        // let app = new Vue({
+        //     el:"#app",
+        //     data:{
+        //         kong:{},
+        //         obj:{
+        //             name:"lin"
+        //         },
+        //         arr:["lin","li"]
+        //     },
+        //     mounted() {
+        //         this.setObj()
+        //     },
+        //     methods: {
+        //         setObj(){
+        //             Object.assign({},this.obj);
+        //         }
+        //     },
+        // })
+        // nextTick 就是为了
+    </script>
+</body>
+</html>

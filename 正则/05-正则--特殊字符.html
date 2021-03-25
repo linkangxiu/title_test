@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-正则--特殊字符</title>
+</head>
+<body>
+    <script>
+        // () 表示一个整体
+        // let reg = /^(\d(\s)\d)$/;
+        // let reg1 = /(\d+(\s+)\d+)/;
+        // console.log(reg.exec("1 6"));
+        // console.log(reg1.exec("123  67687"));
+
+
+        // (?:) 表示整体但不捕获
+        // let reg = /\d+(?:\s+)\d+/;
+        // console.log(reg.exec("1324   52345"));
+
+        
+        // |  占位 或 左边或者右边都行 通常和()使用 表示左边整体或者右边整体
+        // let reg = /(asd{2}|123)/;
+        // let reg1 =/asd{2}/
+        // console.log(reg.test("dd123"));//true
+        // console.log(reg.test("123"));//true
+        // console.log(reg.test("12asdd"));//true
+        // console.log(reg.test("asd123"));//true
+        // let reg = /^as(d|1)23$/;
+        // console.log(reg.test("asd23"));//true
+        // console.log(reg.test("as123"));//true
+        // console.log(reg.test("asd123"));//false
+        // console.log(reg.test("123asd"));//false
+
+
+        // [] 验证的字符串出现在中括号里面的字符串任意一个就行
+        // let reg = /[adsf]/;
+        // console.log(reg.test("asdf"));//true
+        // console.log(reg.test("as"));//true
+        // console.log(reg.test("a"));//true
+        // console.log(reg.test("aeru"));//true
+        // let reg = /^[adsf]$/;
+        // console.log(reg.test("a"));//true
+        // console.log(reg.test("d"));//true
+        // console.log(reg.test("f"));//true
+        // console.log(reg.test("af"));//false
+
+
+
+        // [^] 验证的字符串出现在中括号里面的字符串非任意一个就行
+        // let reg = /^[^adsf]$/;
+        // console.log(reg.test("q"));//true
+        // console.log(reg.test("u"));//true
+        // console.log(reg.test("k"));//true
+        // console.log(reg.test("a"));//false
+
+
+
+        // [n-m] 验证的字符串出现在中括号里面的字符串n~m任意一个就行
+        /**
+         * [0-9] 0~9
+         * [a-z] a-z(小写)
+         * [A-Z] A-Z(大写)
+        */
+        // let reg = /^[0-9]$/;
+        // console.log(reg.test("5"));//true
+        // console.log(reg.test("8"));//true
+        // console.log(reg.test("0"));//true
+        // console.log(reg.test("9"));//true
+        // let reg = /^[a-z]$/;
+        // console.log(reg.test("s"));//true
+        // console.log(reg.test("d"));//true
+        // console.log(reg.test("r"));//true
+        // console.log(reg.test("m"));//true
+        // let reg = /^[A-Z]$/;
+        // console.log(reg.test("D"));//true
+        // console.log(reg.test("G"));//true
+        // console.log(reg.test("Y"));//true
+        // console.log(reg.test("W"));//true
+
+
+        // . 但.出现在[]里面是表示是个字符.
+        // console.log(/[.]/.test("."));//true
+
+        console.log(/^[a-zA-Z0-9]\w{5,11}$/.test("asdf57gfjkliv"));//false
+
+    </script>
+</body>
+</html>

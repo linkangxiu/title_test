@@ -69,26 +69,25 @@
     //         return num
     //     }
     //     console.log(randoms(1,10));
-
-    //     function sort(){
-    //         let arr = [];
-    //         for(let i=0;i<10;i++){
-    //             let num = Math.floor(Math.random()*90)+10;
-    //             arr.push(num); 
-    //         }
-    //         for(let j=0;j<arr.length;j++){
-    //             for(let k=0;k<arr.length-j-1;k++){
-    //                 if(arr[k]>arr[k+1]){
-    //                     let temp = arr[k];
-    //                     arr[k] = arr[k+1];
-    //                     arr[k+1] = temp;
-    //                 }
-    //             }
-    //         }
-    //         return arr
-    //     }
-    //    let res = sort()
-    //    console.log(res);
+        function sort(){
+            let arr = [];
+            for(let i=0;i<10;i++){
+                let num = Math.floor(Math.random()*90)+10;
+                arr.push(num); 
+            }
+            for(let j=0;j<arr.length;j++){
+                for(let k=0;k<arr.length-j-1;k++){
+                    if(arr[k]>arr[k+1]){
+                        let temp = arr[k];
+                        arr[k] = arr[k+1];
+                        arr[k+1] = temp;
+                    }
+                }
+            }
+            return arr
+        }
+       let res = sort()
+       console.log(res);
 
     /*
         var stringArray = [“This”, “is”, “Baidu”, “Campus”]，Alert
@@ -106,7 +105,7 @@
     // function fooRes(foo){
     //     let strToArr = foo.split("-");
     //     for(let i=1;i<strToArr.length;i++){
-    //         strToArr[i] = strToArr[i]("=").toUpperCase() + strToArr[i].substr(1,strToArr[i].length-1);
+    //         strToArr[i] = strToArr[i][0].toUpperCase() + strToArr[i].substr(1,strToArr[i].length-1);
     //     }
     //     return strToArr.join("");
     // }
@@ -150,29 +149,31 @@
 //    let res = subUrl(urls);
 //    console.log(res);
 
+
     /*
         判断一个字符串中出现次数最多的字符，统计这个次数
     */
-    let str = 'asdfssaaasasasasaa';
-    let obj = {};
-    for(let i=0;i<str.length;i++){
-        if(!obj[str.charAt(i)]){
-            obj[str.charAt(i)] = 1;
-        }else{
-            obj[str.charAt(i)] ++
-        }
-    }
+    // let str = 'asdfssaaasasasasaa';
+    // let obj = {};
+    // for(let i=0;i<str.length;i++){
+    //     console.log(obj[str.charAt(i)]);
+    //     if(!obj[str.charAt(i)]){
+    //         obj[str.charAt(i)] = 1;
+    //     }else{
+    //         obj[str.charAt(i)] ++
+    //     }
+    // }
 
-    let m = 0;
-    let s = "";
-    for(let key in obj){
-        if(obj[key] > m){
-            m = obj[key];
-            s = key;
-        }
-    }
-    console.log("出现最多的是" + s + "次数为" + m);
-    console.log(obj);
+    // let m = 0;
+    // let s = "";
+    // for(let key in obj){
+    //     if(obj[key] > m){
+    //         m = obj[key];
+    //         s = key;
+    //     }
+    // }
+    // console.log("出现最多的是" + s + "次数为" + m);
+    // console.log(obj);
 
     </script>
 </body>

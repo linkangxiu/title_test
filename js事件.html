@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js事件</title>
+</head>
+<body>
+    <button>点击按钮</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+    <a href="http://baidu.com">点击跳转</a>
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+    <script>
+        // let list = document.querySelectorAll("li");
+        // let btn = document.querySelector("button");
+        // let a = document.querySelector("a");
+        let son = document.querySelector(".son");
+        let father = document.querySelector(".father");
+        let body = document.querySelector(".father");
+        let html = document.querySelector(".father");
+        // 阻止事件冒泡
+        window.onload = function(){
+            son.addEventListener("click",function(e){
+            alert("son")
+            console.log(e);
+            // e.stopPropagation()
+            e.cancelBubble = true
+        },false)
+
+        father.addEventListener("click",function(){
+            alert("father")
+        },false)
+
+        body.addEventListener("click",function(){
+            alert("body")
+        },false)
+
+        html.addEventListener("click",function(){
+            alert("html")
+        },false)
+        document.addEventListener("click",function(){
+            alert("document")
+        })
+        }
+        
+
+        //阻止默认行为
+        // a.addEventListener("click",function(e){
+        //     console.log(e);
+        //     e.preventDefault() //正常写法
+        // })
+        // 低版本写法
+        // a.onclick = function(e){
+        //     console.log(e);
+        //     // e.preventDefault();
+        //     // e.returnValue = false;
+        //     return false //通用
+        // }
+
+        //低版本IE不认识 addEventListener
+        // btn.addEventListener("click",function(e){
+        //     console.log(e.target);
+        // })
+        //兼容性处理
+        // btn.onclick = function(e){
+        //     e = e || window.event;
+        //     let target = e.target || e.srcElement;
+        //     console.log(e,target);
+        // }
+    </script>
+</body>
+</html>

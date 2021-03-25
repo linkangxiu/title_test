@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06-正则--验证数字</title>
 </head>
 <body>
     <script>
-        let obj = {
-            name:"lin",
-            age:18,
-        }
-        let {name} = obj.name
-        console.log(name);
+        /**
+         * 验证 0~255
+        */
+       let reg = /^(\d|\d{2}|1\d{2}|2[0-4]\d|25[0-5])$/
+       console.log(reg.test("123"));
     </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6的class</title>
+</head>
+<body>
+    <script>
+        // function Person(){
+        //     this.name = "lin";
+        //     this.age = 18;
+        //     this.say = function(){
+        //         console.log("这是this");
+        //     }
+        // }
+        // let p1 = new Person();
+        // console.log(p1.name);
+        // p1.say()
+
+        //class写法
+        class Person{
+            constructor(){
+                this.name = "li";
+                this.age = 18;
+            }
+            say(){
+                console.log("这是es6的class写法");
+            }
+        }
+        let p2 = new Person();
+        
+        // es6的继承
+        class Son extends Person{
+            //复杂写法
+            // constructor(){
+            //     super();
+            //     this.name = "l";
+            // }
+            //简单写法
+            name = "jiandan"
+            bay(){
+                console.log("es6的继承");
+            }
+        }
+        let s1 = new Son();
+        console.log(s1.name,s1.age);
+        s1.bay()
+
+    </script>
+</body>
+</html>

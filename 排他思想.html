@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script>
+        let btn = document.getElementsByTagName("button");
+        console.log(btn);
+        for(let i = 0;i<btn.length;i++){
+            btn[i].addEventListener("click",function(e){
+                // console.log(e.target);
+                for(let i = 0;i<btn.length;i++){
+                    btn[i].style.backgroundColor = ""
+                }
+                e.target.style.backgroundColor = "pink"
+            })
+        }
+    </script>
+</body>
+</html>
